@@ -5,13 +5,22 @@ Configuration
 import os
 from dotenv import load_dotenv
 
+import streamlit as st
+
 load_dotenv()
 
 
 class Config:
     # API Keys
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")  
+    # Get API keys (من .env محلياً أو من Streamlit secrets)
+    try:
+        OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+        GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+        TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
+    except:
+        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+        GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+        
     
     # LLM Provider Settings 
     LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")  # Default: openai
