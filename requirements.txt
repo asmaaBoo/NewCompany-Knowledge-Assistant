@@ -7,7 +7,7 @@ langchain-text-splitters==0.3.4
 openai>=1.6.0
 tiktoken>=0.7.0
 
-faiss-cpu==1.9.0
+faiss-cpu>=1.9.0.post1
 pypdf==5.1.0
 streamlit==1.40.2
 python-dotenv==1.0.1
@@ -22,3 +22,6 @@ tenacity>=8.2.3
 
 duckduckgo-search==6.3.5
 tqdm>=4.66.0
+chromadb
+groq
+tavily-python
