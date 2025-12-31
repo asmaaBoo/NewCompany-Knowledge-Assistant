@@ -1,9 +1,11 @@
-@"
 .env
 *.env
 __pycache__/
 *.pyc
+
+# Vector store - will be created automatically
+data/vector_store/
 chroma_db/
-data/
-*.pdf
-"@ | Out-File -FilePath .gitignore -Encoding utf8
+
+# Allow PDFs in data/pdfs
+!data/pdfs/*.pdf
